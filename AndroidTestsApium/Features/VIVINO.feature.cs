@@ -28,7 +28,7 @@ namespace AndroidTestsApium.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Calculator.feature"
+#line 1 "VIVINO.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]

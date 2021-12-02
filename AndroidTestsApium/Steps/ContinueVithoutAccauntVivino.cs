@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Appium.Android;
+﻿using AndroidTestsApium.POM;
+using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
 
 namespace AndroidTestsApium.Steps
@@ -8,19 +9,19 @@ namespace AndroidTestsApium.Steps
     {
         private readonly ScenarioContext _scenarioContext;
         private readonly AndroidDriver<AndroidElement> _androidDriver;
+        private readonly Page _page;
 
         public ContinueVithoutAccauntVivino(ScenarioContext scenarioContext)
         {
+            _page = new Page(_androidDriver);
             _scenarioContext = scenarioContext;
             _androidDriver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
         }
 
         [Given("the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int number)
+        public void GivenTheFirstNumberIs()
         {
-            
-
-            _scenarioContext.Pending();
+            _page.Login();
         }
 
         [Given("the second number is (.*)")]
