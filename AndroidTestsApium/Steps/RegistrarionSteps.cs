@@ -35,7 +35,7 @@ namespace AndroidTestsApium.Steps
             _page.Email(text);
         }
 
-        [When(@"Create a password")]
+        [When(@"Create '(.*)' password")]
         public void WhenCreateAPassword()
         {
             ScenarioContext.Current.Pending();
@@ -47,14 +47,14 @@ namespace AndroidTestsApium.Steps
             ScenarioContext.Current.Pending();
         }
 
-        [When(@"Enter your first and last name")]
+        [When(@"Enter your '(.*)' name")]
         public void WhenEnterYourFirstAndLastName()
         {
             ScenarioContext.Current.Pending();
         }
 
-        [When(@"Select country and language")]
-        public void WhenSelectCountryAndLanguage()
+        [When(@"Enter your '(.*)' last name")]
+        public void WhenEnterYourLastName(string p0)
         {
             ScenarioContext.Current.Pending();
         }
