@@ -21,19 +21,23 @@ namespace AndroidTestsApium.POM
         }
 
         By getStartedButton = By.Id("vivino.web.app:id/getstarted_layout");
-        // By emailFiel
-        //  By passwordFiel
-        //  By nextButton
-        //   By firstNameFiel
-        //  By lastNameFiel
-        // By selectCountryButton
-        // By selectStateButton
-        //   By selectLanguageButton
-        // By doneButton
-        // By 
+        By emailFiel = By.Id("vivino.web.app:id/til_email");
+        By passwordFiel = By.Id("vivino.web.app:id/til_password");
+        By nextButton = By.Id("vivino.web.app:id/action_next");
+        By firstNameFiel = By.Id("vivino.web.app:id/edtUserName");
+        By lastNameFiel = By.Id("vivino.web.app:id/edtUserSurname");
+        //By selectCountryButton = By.Id("vivino.web.app:id/txtCountryValue");
+        //By selectCountry = By.xPath("/hierarchy/android.widget.FrameLayout/android.widget.
 
-        //[FindsBy(How = How.Id, Using = "vivino.web.app:id/seehowitwork")]
-        //private AndroidElement _searchText;
+        //LinearLayout / android.widget.FrameLayout / android.widget.FrameLayout / android.widget.
+        //FrameLayout / androidx.appcompat.widget.LinearLayoutCompat / android.widget.
+        //FrameLayout / android.widget.ListView / android.widget.RelativeLayout[13] / android.widget.TextView");
+
+        //By selectStateButton = By.Id("vivino.web.app:id/til_password");
+        ////By selectLanguageButton = By.Id("vivino.web.app:id/til_password");
+        //By doneButton = By.Id("vivino.web.app:id/action_done");
+        //By asseptPolicy By.Id("vivino.web.app:id/new_profile_agree_terms");
+
 
         public Page Login()
         {
@@ -58,5 +62,26 @@ namespace AndroidTestsApium.POM
             email.SendKeys(text);
             return this;
         }
+
+        //public Page Email(string text)
+        //{
+        //    email.SendKeys(text);
+        //    return this;
+        //}
+        //public Page Email(string text)
+        //{
+        //    email.SendKeys(text);
+        //    return this;
+        //}
+        //public Page Email(string text)
+        //{
+        //    email.SendKeys(text);
+        //    return this;
+        //}
+        //public Page Email(string text)
+        //{
+        //    email.SendKeys(text);
+        //    return this;
+        //}
     }
 }
