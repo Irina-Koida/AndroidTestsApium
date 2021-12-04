@@ -8,7 +8,8 @@ namespace AndroidTestsApium.Drivers
 {
     class AppiumDriver
     {
-        private AppiumDriver<AndroidElement> _driver;
+        private AppiumDriver<AndroidElement>_driver;
+
         public AppiumDriver<AndroidElement> InitializeAppium()
         {
             var driverOptions = new AppiumOptions();
@@ -27,6 +28,7 @@ namespace AndroidTestsApium.Drivers
             }
 
             _driver = new AndroidDriver<AndroidElement>(appiumService, driverOptions, TimeSpan.FromSeconds(100));
+           // _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions, TimeSpan.FromSeconds(100));
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             return _driver;
         }
