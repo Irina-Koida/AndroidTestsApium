@@ -14,14 +14,19 @@ namespace AndroidTestsApium.POM
     {
         private readonly AppiumDriver<AndroidElement> _driver;
         private readonly Actions _action;
+        private readonly WithoutRegistering _withoutRegistering;
 
         public SelectAWineWithoutRegistering(AppiumDriver<AndroidElement> appiumDriver)
         {
             _driver = appiumDriver;
             _action = new Actions(_driver);
+            _withoutRegistering = new WithoutRegistering(_driver);
         }
 
-        private readonly By _search = By.Id("vivino.web.app:id/wine_explorer_tab");
+        private readonly By _search = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
+            "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view." +
+            "ViewGroup/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout" +
+            "/android.widget.LinearLayout[2]");
         private readonly By _selectRed = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/" +
             "androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/" +
@@ -31,10 +36,20 @@ namespace AndroidTestsApium.POM
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
             "android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/" +
             "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView");
-        private readonly By _countText = By.Id("vivino.web.app:id/subtitle");
+        private readonly By _countText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
+            "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/" +
+            "android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/" +
+            "android.widget.LinearLayout[2]/android.widget.TextView");
 
-        public void SearchPage(string search) =>
-         _action.MoveToElement(_driver.FindElement(_search)).Click().Perform();
+        public SelectAWineWithoutRegistering SearchPage(string search)
+        {
+            _withoutRegistering.TapATryUsOut(search);
+            _withoutRegistering.TapNext(search);
+            _withoutRegistering.TapContiueWithoutAccount(search);
+            _withoutRegistering.OpenProfilePage();
+            _action.MoveToElement(_driver.FindElement(_search)).Click().Perform();
+            return this;
+        }
 
         public void RedWineSelect(string red) =>
          _action.MoveToElement(_driver.FindElement(_selectRed)).Click().Perform();
