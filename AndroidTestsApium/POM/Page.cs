@@ -1,24 +1,40 @@
-﻿using OpenQA.Selenium;
+﻿using AndroidTestsApium.Drivers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SeleniumExtras.WaitHelpers;
+using OpenQA.Selenium.Interactions;
 
 namespace AndroidTestsApium.POM
 {
     public class Page
     {
+        // AppiumDriver wait = new AppiumDriver(TimeSpan.FromSeconds(15));
+        //AppiumDriver wait = new AppiumDriver(driver, TimeSpan.FromSeconds(20));
+        //AndroidElement elevent = wait.Until(SeleniumExtras
+        //    .WaitHelpers
+        //    .ExpectedConditions
+        //    .ElementIsVisible(By.Id("com.google.android.gms:id/cancel")));
+
+        private readonly AndroidElement _element;
+
         private readonly AppiumDriver<AndroidElement> _driver;
 
-        public Page(AppiumDriver<AndroidElement> appiumDriver)
+        public Page(AppiumDriver<AndroidElement> appiumDriver, AndroidElement element)
         {
             _driver = appiumDriver;
+            _element = element;         
         }
+
+        
 
         By getStartedButton = By.Id("vivino.web.app:id/getstarted_layout");
         By gall = By.Id("com.google.android.gms:id/cancel");
@@ -29,7 +45,7 @@ namespace AndroidTestsApium.POM
         By lastNameFiel = By.XPath("vivino.web.app:id/edtUserSurname");
         By asseptPolicy = By.Id("vivino.web.app:id/new_profile_agree_terms");
         By newProfile = By.XPath("/ hierarchy / android.widget.FrameLayout / android.widget.LinearLayout / android.widget.FrameLayout / android.view.ViewGroup / android.widget.FrameLayout[1] / android.view.ViewGroup / android.widget.TextView");
-        //By doneButton = By.Id("vivino.web.app:id/action_done");
+        By doneButton = By.Id("vivino.web.app:id/action_done");
 
 
         //[FindsBy(How = How.Id, Using = "getstarted_layout")] 
@@ -45,6 +61,7 @@ namespace AndroidTestsApium.POM
 
         public Page Gall()
         {
+           // gall = wait.Time(Until.ExplisitWait.ExpectedConditions.FindElement.ElementExist(By.Id("com.google.android.gms:id/cancel"));
             _driver.FindElement(gall).Click();
             return this;
         }
