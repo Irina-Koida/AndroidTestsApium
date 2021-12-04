@@ -19,14 +19,25 @@ namespace AndroidTestsApium.POM
         {
             _driver = appiumDriver;
         }
-        By loginBtn = By.XPath("//android.widget.FrameLayout[@content-desc=\"getstarted_layout\"]");
-        By loginBыtn = By.Id("//getstarted_layout");//android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button[1]
+
+        By getStartedButton = By.Id("vivino.web.app:id/getstarted_layout");
+        // By emailFiel
+        //  By passwordFiel
+        //  By nextButton
+        //   By firstNameFiel
+        //  By lastNameFiel
+        // By selectCountryButton
+        // By selectStateButton
+        //   By selectLanguageButton
+        // By doneButton
+        // By 
+
+        //[FindsBy(How = How.Id, Using = "vivino.web.app:id/seehowitwork")]
+        //private AndroidElement _searchText;
 
         public Page Login()
         {
-            Thread.Sleep(5000);
-            //loginButton.SendKeys("Di");
-            _driver.FindElement(loginBtn).Click();
+            _driver.FindElement(getStartedButton).Click();
             return this;
         }
 

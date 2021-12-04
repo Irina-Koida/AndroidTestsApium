@@ -18,6 +18,7 @@ namespace AndroidTestsApium.Drivers
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "10.0");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.AutomationName, "Appium");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "C:\\Users\\Kostiantin\\Desktop\\TestsAPK\\vivino.web.app_8.20.10_8201099.apk");
+            driverOptions.AddAdditionalCapability("appWaitActivity", "com.vivino.activities.OOTB");
 
             var appiumService = new AppiumServiceBuilder().WithIPAddress("127.0.0.1")
                 .UsingAnyFreePort().Build(); //запускаем сервер
