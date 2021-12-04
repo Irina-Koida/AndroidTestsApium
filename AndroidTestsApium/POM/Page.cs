@@ -21,63 +21,78 @@ namespace AndroidTestsApium.POM
         }
 
         By getStartedButton = By.Id("vivino.web.app:id/getstarted_layout");
-        By emailFiel = By.Id("vivino.web.app:id/til_email");
-        By passwordFiel = By.Id("vivino.web.app:id/til_password");
+        By gall = By.Id("com.google.android.gms:id/cancel");
+        By emailFiel = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]");
+        By passwordFiel = By.XPath("/ hierarchy / android.widget.FrameLayout / android.widget.LinearLayout / android.widget.FrameLayout / android.view.ViewGroup / android.widget.FrameLayout[2] / android.widget.ScrollView / android.widget.RelativeLayout / android.widget.LinearLayout / android.widget.LinearLayout[1] / android.view.ViewGroup / android.widget.LinearLayout[2]");
         By nextButton = By.Id("vivino.web.app:id/action_next");
-        By firstNameFiel = By.Id("vivino.web.app:id/edtUserName");
-        By lastNameFiel = By.Id("vivino.web.app:id/edtUserSurname");
-        //By asseptPolicy By.Id("vivino.web.app:id/new_profile_agree_terms");
+        By firstNameFiel = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.EditText[1]");
+        By lastNameFiel = By.XPath("vivino.web.app:id/edtUserSurname");
+        By asseptPolicy = By.Id("vivino.web.app:id/new_profile_agree_terms");
+        By newProfile = By.XPath("/ hierarchy / android.widget.FrameLayout / android.widget.LinearLayout / android.widget.FrameLayout / android.view.ViewGroup / android.widget.FrameLayout[1] / android.view.ViewGroup / android.widget.TextView");
         //By doneButton = By.Id("vivino.web.app:id/action_done");
 
 
-        [FindsBy(How = How.Id, Using = "getstarted_layout")] 
-        private AndroidElement searchText;
+        //[FindsBy(How = How.Id, Using = "getstarted_layout")] 
+        //private AndroidElement searchText;
+        //[FindsBy(How = How.Id, Using = "til_email")]
+        //private AndroidElement email;
 
         public Page Login()
         {
             _driver.FindElement(getStartedButton).Click();
             return this;
         }
-       
-        [FindsBy(How = How.Id, Using = "til_email")] 
-        private AndroidElement email;
 
-        public Page Email(string text)
+        public Page Gall()
         {
-            email.SendKeys(text);
+            _driver.FindElement(gall).Click();
             return this;
         }
 
+        public Page Email(string text)
+        {
+            _driver.FindElement(emailFiel).Click();
+            return this;
+            _driver.FindElement(emailFiel).SendKeys(Helper.RandomEmailUser());
+            return this;
+        }
 
+        public Page Password(string text)
+        {
+            _driver.FindElement(passwordFiel).Click();
+            return this;
+            _driver.FindElement(passwordFiel).SendKeys(Helper.RandomEmailUser());
+            return this;
+        }
 
+        public Page Next()
+        {
+            _driver.FindElement(nextButton).Click();
+            return this;
+        }
 
+        public Page FirstName(string text)
+        {
+            _driver.FindElement(firstNameFiel).Click();
+            return this;
+            _driver.FindElement(firstNameFiel).SendKeys("Dev");
+            return this;
+        }
+        public Page LastName(string text)
+        {
+            _driver.FindElement(lastNameFiel).Click();
+            return this;
+            _driver.FindElement(lastNameFiel).SendKeys("Deva");
+            return this;
+        }
 
+        public Page Accept()
+        {
+            _driver.FindElement(asseptPolicy).Click();
+            return this;
+        }
 
-        //public Page InputEmail(string mail)
-        //{
-        //    _webDriver.FindElement(_emailUser).SendKeys(mail);
-        //    return this;
-        //}
-
-        //public Page Email(string text)
-        //{
-        //    email.SendKeys(text);
-        //    return this;
-        //}
-        //public Page Email(string text)
-        //{
-        //    email.SendKeys(text);
-        //    return this;
-        //}
-        //public Page Email(string text)
-        //{
-        //    email.SendKeys(text);
-        //    return this;
-        //}
-        //public Page Email(string text)
-        //{
-        //    email.SendKeys(text);
-        //    return this;
-        //}
+        public string ClickNewProfile() =>
+           _driver.FindElement(newProfile).Text;
     }
 }

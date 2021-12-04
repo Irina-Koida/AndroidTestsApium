@@ -1,5 +1,6 @@
 ﻿using System;
 using AndroidTestsApium.POM;
+using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
@@ -29,40 +30,46 @@ namespace AndroidTestsApium.Steps
             _page.Login();
         }
 
-        [When(@"Enter '(.*)' email")]
+        [When(@"Tap the gall button")]
+        public void WhenTapTheGallButton()
+        {
+            _page.Gall();
+        }
+
+        [When(@"Enter '(.*)'")]
         public void WhenEnterYourEmail(string text)
         {
             _page.Email(text);
         }
 
         [When(@"Create '(.*)' password")]
-        public void WhenCreateAPassword()
+        public void WhenCreateAPassword(string text)
         {
-            ScenarioContext.Current.Pending();
+            _page.Password(text);
         }
 
         [When(@"Tap Next")]
         public void WhenTapNext()
         {
-            ScenarioContext.Current.Pending();
+            _page.Next();
         }
 
         [When(@"Enter your '(.*)' name")]
-        public void WhenEnterYourFirstAndLastName()
+        public void WhenEnterYourFirstAndLastName(string text)
         {
-            ScenarioContext.Current.Pending();
+            _page.FirstName(text);
         }
 
         [When(@"Enter your '(.*)' last name")]
-        public void WhenEnterYourLastName(string p0)
+        public void WhenEnterYourLastName(string text)
         {
-            ScenarioContext.Current.Pending();
+            _page.LastName(text);
         }
 
         [When(@"Accept the Terms of Use and the Privacy Policy")]
         public void WhenAcceptTheTermsOfUseAndThePrivacyPolicy()
         {
-            ScenarioContext.Current.Pending();
+            _page.Accept();
         }
 
         [When(@"Tap ""(.*)"" in the upper right corner")]
@@ -71,10 +78,11 @@ namespace AndroidTestsApium.Steps
             ScenarioContext.Current.Pending();
         }
 
-        [Then(@"Open next page with registration")]
-        public void ThenOpenNextPageWithRegistration()
+        [Then(@"Open '(.*)' page with registration")]
+        public void ThenOpenNextPageWithRegistration(string titleText)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(titleText, _page.ClickNewProfile());
+           // _page.ClickNewProfile();
         }
 
         [Then(@"The page with you profile opened")]
