@@ -23,7 +23,10 @@ namespace AndroidTestsApium.POM
             _withoutRegistering = new WithoutRegistering(_driver);
         }
 
-        private readonly By _search = By.Id("vivino.web.app:id/wine_explorer_tab");
+        private readonly By _search = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
+            "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view." +
+            "ViewGroup/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout" +
+            "/android.widget.LinearLayout[2]");
         private readonly By _selectRed = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/" +
             "androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/" +
@@ -33,7 +36,10 @@ namespace AndroidTestsApium.POM
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
             "android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/" +
             "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView");
-        private readonly By _countText = By.Id("vivino.web.app:id/subtitle");
+        private readonly By _countText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
+            "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/" +
+            "android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/" +
+            "android.widget.LinearLayout[2]/android.widget.TextView");
 
         public SelectAWineWithoutRegistering SearchPage(string search)
         {
