@@ -1,4 +1,5 @@
 ﻿using AndroidTestsApium.Drivers;
+using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
 
@@ -21,10 +22,10 @@ namespace AndroidTestsApium.Hooks
             _scenarioContext.Set(appiumDriver.InitializeAppium(), "driver");
         }
 
-        //[AfterScenario]
-        //public void AfterScenario()
-        //{
-        //    _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver").Dispose();
-        //}
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver").Dispose();
+        }
     }
 }
