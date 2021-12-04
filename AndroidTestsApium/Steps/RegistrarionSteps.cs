@@ -7,8 +7,6 @@ using TechTalk.SpecFlow;
 
 namespace AndroidTestsApium.Steps
 {
-
-
         [Binding]
     public class RegistrarionSteps
     {
