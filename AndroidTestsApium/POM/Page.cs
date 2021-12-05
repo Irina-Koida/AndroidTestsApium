@@ -17,24 +17,15 @@ namespace AndroidTestsApium.POM
 {
     public class Page
     {
-        // AppiumDriver wait = new AppiumDriver(TimeSpan.FromSeconds(15));
-        //AppiumDriver wait = new AppiumDriver(driver, TimeSpan.FromSeconds(20));
-        //AndroidElement elevent = wait.Until(SeleniumExtras
-        //    .WaitHelpers
-        //    .ExpectedConditions
-        //    .ElementIsVisible(By.Id("com.google.android.gms:id/cancel")));
-
         private readonly AndroidElement _element;
 
         private readonly AppiumDriver<AndroidElement> _driver;
 
-        public Page(AppiumDriver<AndroidElement> appiumDriver, AndroidElement element)
+        public Page(AppiumDriver<AndroidElement> appiumDriver)
         {
             _driver = appiumDriver;
-            _element = element;         
-        }
-
-        
+           
+        }       
 
         By getStartedButton = By.Id("vivino.web.app:id/getstarted_layout");
         By gall = By.Id("com.google.android.gms:id/cancel");
