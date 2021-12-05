@@ -18,7 +18,7 @@ namespace AndroidTestsApium.Steps
             _androidDriver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
             _userWithoutRegistering = new WithoutRegistering(_androidDriver);
         }
-        
+ 
         [When(@"I tap a ""(.*)"" button")]
         public void WhenITapAButton(string tryUsOut)
         {
