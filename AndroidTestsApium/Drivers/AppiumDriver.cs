@@ -31,6 +31,7 @@ namespace AndroidTestsApium.Drivers
            // _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions, TimeSpan.FromSeconds(100));
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             return _driver;
+
         }
     }
 }
