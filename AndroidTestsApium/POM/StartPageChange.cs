@@ -15,11 +15,11 @@ namespace AndroidTestsApium.POM
             _driver = appiumDriver;
         }
 
-        By getStartedButton = By.Id("vivino.web.app:id/getstarted_layout");
+        By appStarts = By.Id("");
 
-        public StartPageChange ClickGetStartButton()
+        public StartPageChange ClickAppStartsButton()
         {
-            _driver.FindElement(getStartedButton).Click();
+            _driver.FindElement(appStarts).Click();
             return this;
         }
 
