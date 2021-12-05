@@ -1,5 +1,4 @@
-﻿using System;
-using AndroidTestsApium.POM;
+﻿using AndroidTestsApium.POM;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -24,66 +23,66 @@ namespace AndroidTestsApium.Steps
         [When(@"Tap the Get started button")]
         public void WhenTapTheGetStartedButton()
         {
-            _page.Login();
+            _page.ClickGetStartButton();
         }
 
         [When(@"Tap the gall button")]
         public void WhenTapTheGallButton()
         {
-            _page.Gall();
+            _page.ClosedGooglemail();
         }
 
         [When(@"Enter '(.*)'")]
         public void WhenEnterYourEmail(string text)
         {
-            _page.Email(text);
+            _page.InputEmailField(text);
         }
 
         [When(@"Create '(.*)'")]
         public void WhenCreateAPassword(string text)
         {
-            _page.Password(text);
+            _page.InputPasswordField(text);
         }
 
         [When(@"Tap Next")]
         public void WhenTapNext()
         {
-            _page.Next();
+            _page.ClickNextButton();
         }
 
         [When(@"Enter your '(.*)' name")]
         public void WhenEnterYourFirstAndLastName(string text)
         {
-            _page.FirstName(text);
+            _page.InputFirstNameField(text);
         }
 
         [When(@"Enter your '(.*)' last name")]
         public void WhenEnterYourLastName(string text)
         {
-            _page.LastName(text);
+            _page.InputLastNameField(text);
         }
 
         [When(@"Select state country")]
         public void WhenSelectStateCountry()
         {
-            _page.SelectStateCountry();
+            _page.ClickSelectStateCountry();
         }
 
         [When(@"Select state")]
         public void WhenSelectState()
         {
-           _page.SelectState();
+           _page.ClickSelectStateButton();
         }
 
         [When(@"Accept the Terms of Use and the Privacy Policy")]
         public void WhenAcceptTheTermsOfUseAndThePrivacyPolicy()
         {
-            _page.Accept();
+            _page.ClickAcceptPolicy();
         }
         [When(@"Tap Done in the upper right corner")]
         public void WhenTapInTheUpperRightCorner()
         {
-            _page.Done();
+            _page.ClickDoneButton();
         }
 
         [Then(@"Open ""(.*)"" page with registration")]
@@ -92,10 +91,10 @@ namespace AndroidTestsApium.Steps
             Assert.AreEqual(titleText, _page.ClickNewProfile());
         }
 
-        [Then(@"The page with you profile opened")]
-        public void ThenThePageWithYouProfileOpened()
+        [Then(@"The ""(.*)"" with you profile opened")]
+        public void ThenThePageWithYouProfileOpened(string titleText)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(titleText, _page.ClickUserpage());
         }
     }
 }

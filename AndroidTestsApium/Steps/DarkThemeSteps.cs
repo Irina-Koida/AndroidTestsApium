@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AndroidTestsApium.POM;
+using NUnit.Framework;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
 
 namespace AndroidTestsApium.Steps
@@ -6,40 +9,52 @@ namespace AndroidTestsApium.Steps
     [Binding]
     public class DarkThemeSteps
     {
-        [When(@"Tap in the upper right corner of the ""(.*)""")]
-        public void WhenTapInTheUpperRightCornerOfThe(string p0)
+        private readonly AppiumDriver<AndroidElement> _driver;
+        private readonly ScenarioContext _scenarioContext;
+        private DarkTheme _darkTheme;
+
+        public DarkThemeSteps(ScenarioContext scenarioContext)
         {
-            ScenarioContext.Current.Pending();
+            _scenarioContext = scenarioContext;
+            _driver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
+            _darkTheme = new DarkTheme(_driver);
+        }
+
+
+        [When(@"Tap in the upper right corner of the Kebab Menu")]
+        public void WhenTapInTheUpperRightCornerOfThe()
+        {
+            _darkTheme.ClickButtonBurgerMenu();
         }
         
-        [When(@"From the offered list of options, select ""(.*)""")]
-        public void WhenFromTheOfferedListOfOptionsSelect(string p0)
+        [When(@"From the offered list of options, select Settings")]
+        public void WhenFromTheOfferedListOfOptionsSelect()
         {
-            ScenarioContext.Current.Pending();
+            _darkTheme.ClickButtonSettings();
         }
         
-        [When(@"Swipe down")]
+       /* [When(@"Swipe down")]
         public void WhenSwipeDown()
         {
-            ScenarioContext.Current.Pending();
+            _darkThemet.Pending();
+        }*/
+        
+        [When(@"Find the Dark Mode field")]
+        public void WhenFindTheField()
+        {
+            _darkTheme.ClickButtonDarkMode();
         }
         
-        [When(@"Find the """"(.*)"""" field")]
-        public void WhenFindTheField(string p0)
+        [When(@"Select Always in Dark Mode")]
+        public void WhenSelect()
         {
-            ScenarioContext.Current.Pending();
+            _darkTheme.ClickParametrDarkMode();
         }
-        
-        [When(@"Select """"(.*)""""")]
-        public void WhenSelect(string p0)
+
+        [Then(@"The start page is displayed with a '(.*)' theme")]
+        public void ThenTheStartPageIsDisplayedWithADarkTheme(string dark)
         {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"The start page is displayed with a dark theme")]
-        public void ThenTheStartPageIsDisplayedWithADarkTheme()
-        {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(actual: _darkTheme.AssertDarkMode(dark), expected: dark);
         }
     }
 }

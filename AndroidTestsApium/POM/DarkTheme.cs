@@ -2,10 +2,6 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AndroidTestsApium.POM
 {
@@ -22,10 +18,35 @@ namespace AndroidTestsApium.POM
         By settings = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout");
         By darkMode = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[8]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout");
         By selectDarkMode = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]");
+        By assertDarkMode = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[2]");
 
-        public PageRegistration Login()
+        public DarkTheme ClickButtonBurgerMenu()
         {
-            _driver.FindElement(getStartedButton).Click();
+            _driver.FindElement(burgerMenu).Click();
+            return this;
+        }
+
+        public DarkTheme ClickButtonSettings()
+        {
+            _driver.FindElement(settings).Click();
+            return this;
+        }
+
+        public DarkTheme ClickButtonDarkMode()
+        {
+            _driver.FindElement(darkMode).Click();
+            return this;
+        }
+
+        public DarkTheme ClickParametrDarkMode()
+        {
+            _driver.FindElement(selectDarkMode).Click();
+            return this;
+        }
+
+        public DarkTheme AssertDarkMode(string dark)
+        {
+            _driver.FindElement(assertDarkMode).Click();
             return this;
         }
     }

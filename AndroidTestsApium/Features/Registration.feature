@@ -20,4 +20,4 @@ Scenario: Check the possibility of registration in the application through the r
 	When Select state
 	When Accept the Terms of Use and the Privacy Policy
 	When Tap Done in the upper right corner
-	Then The page with you profile opened
+	Then The 'page' with you profile opened
