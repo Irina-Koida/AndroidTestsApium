@@ -7,19 +7,18 @@ using TechTalk.SpecFlow;
 
 namespace AndroidTestsApium.Steps
 {
-        [Binding]
+    [Binding]
     public class RegistrarionSteps
     {
-
         private readonly AppiumDriver<AndroidElement> _driver;
         private readonly ScenarioContext _scenarioContext;
-        private Page _page;
+        private PageRegistration _page;
 
         public RegistrarionSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _driver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
-            _page = new Page(_driver);
+            _page = new PageRegistration(_driver);
         }
 
         [When(@"Tap the Get started button")]
@@ -64,16 +63,27 @@ namespace AndroidTestsApium.Steps
             _page.LastName(text);
         }
 
+        [When(@"Select state country")]
+        public void WhenSelectStateCountry()
+        {
+            _page.SelectStateCountry();
+        }
+
+        [When(@"Select state")]
+        public void WhenSelectState()
+        {
+           _page.SelectState();
+        }
+
         [When(@"Accept the Terms of Use and the Privacy Policy")]
         public void WhenAcceptTheTermsOfUseAndThePrivacyPolicy()
         {
             _page.Accept();
         }
-
-        [When(@"Tap ""(.*)"" in the upper right corner")]
-        public void WhenTapInTheUpperRightCorner(string p0)
+        [When(@"Tap Done in the upper right corner")]
+        public void WhenTapInTheUpperRightCorner()
         {
-            ScenarioContext.Current.Pending();
+            _page.Done();
         }
 
         [Then(@"Open ""(.*)"" page with registration")]

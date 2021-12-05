@@ -15,11 +15,11 @@ using OpenQA.Selenium.Appium.Service;
 
 namespace AndroidTestsApium.POM
 {
-    public class Page
+    public class PageRegistration
     {
         private readonly AppiumDriver<AndroidElement> _driver;
 
-        public Page(AppiumDriver<AndroidElement> appiumDriver)
+        public PageRegistration(AppiumDriver<AndroidElement> appiumDriver)
         {
             _driver = appiumDriver;
            
@@ -35,60 +35,55 @@ namespace AndroidTestsApium.POM
         By asseptPolicy = By.Id("vivino.web.app:id/new_profile_agree_terms");
         By newProfile = By.XPath("/ hierarchy / android.widget.FrameLayout / android.widget.LinearLayout / android.widget.FrameLayout / android.view.ViewGroup / android.widget.FrameLayout[1] / android.view.ViewGroup / android.widget.TextView");
         By doneButton = By.Id("vivino.web.app:id/action_done");
-
-
-        //[FindsBy(How = How.Id, Using = "getstarted_layout")] 
-        //private AndroidElement searchText;
-        //[FindsBy(How = How.Id, Using = "til_email")]
-        //private AndroidElement email;
-
-        public Page Login()
+        By selectStateCountry = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[5]");
+        By selectState = By.XPath("/ hierarchy / android.widget.FrameLayout / android.widget.LinearLayout / android.widget.FrameLayout / android.widget.FrameLayout / android.widget.FrameLayout / androidx.appcompat.widget.LinearLayoutCompat / android.widget.FrameLayout / android.widget.ListView / android.widget.RelativeLayout[4] / android.widget.TextView");
+        public PageRegistration Login()
         {
             _driver.FindElement(getStartedButton).Click();
             return this;
         }
 
-        public Page Gall()
+        public PageRegistration Gall()
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _driver.FindElement(gall).Click();
             return this;
         }
 
-        public Page Email(string text)
+        public PageRegistration Email(string text)
         {
             _driver.FindElement(emailFiel).Click();
             _driver.FindElement(emailFiel).SendKeys(Helper.RandomEmailUser());
             return this;
         }
 
-        public Page Password(string text)
+        public PageRegistration Password(string text)
         {
             _driver.FindElement(passwordFiel).Click();
             _driver.FindElement(passwordFiel).SendKeys(Helper.RandomEmailUser());
             return this;
         }
 
-        public Page Next()
+        public PageRegistration Next()
         {
             _driver.FindElement(nextButton).Click();
             return this;
         }
 
-        public Page FirstName(string text)
+        public PageRegistration FirstName(string text)
         {
             _driver.FindElement(firstNameFiel).Click();
             _driver.FindElement(firstNameFiel).SendKeys("Dev");
             return this;
         }
-        public Page LastName(string text)
+        public PageRegistration LastName(string text)
         {
             _driver.FindElement(lastNameFiel).Click();
             _driver.FindElement(lastNameFiel).SendKeys("Deva");
             return this;
         }
 
-        public Page Accept()
+        public PageRegistration Accept()
         {
             _driver.FindElement(asseptPolicy).Click();
             return this;
@@ -96,5 +91,23 @@ namespace AndroidTestsApium.POM
 
         public string ClickNewProfile() =>
            _driver.FindElement(newProfile).Text;
+
+        public PageRegistration Done()
+        {
+            _driver.FindElement(doneButton).Click();
+            return this;
+        }
+
+        public PageRegistration SelectStateCountry()
+        {
+            _driver.FindElement(selectStateCountry).Click();
+            return this;
+        }
+
+        public PageRegistration SelectState()
+        {
+            _driver.FindElement(selectState).Click();
+            return this;
+        }
     }
 }

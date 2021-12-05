@@ -16,6 +16,8 @@ Scenario: Check the possibility of registration in the application through the r
 	Then Open "Great user" page with registration
 	When Enter your 'first name' name
 	When Enter your 'last name' last name
+	When Select state country
+	When Select state
 	When Accept the Terms of Use and the Privacy Policy
-	When Tap "Done" in the upper right corner
+	When Tap Done in the upper right corner
 	Then The page with you profile opened
