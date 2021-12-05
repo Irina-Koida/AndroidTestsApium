@@ -40,7 +40,7 @@ namespace AndroidTestsApium.Steps
             _page.Email(text);
         }
 
-        [When(@"Create '(.*)' password")]
+        [When(@"Create '(.*)'")]
         public void WhenCreateAPassword(string text)
         {
             _page.Password(text);
@@ -76,11 +76,10 @@ namespace AndroidTestsApium.Steps
             ScenarioContext.Current.Pending();
         }
 
-        [Then(@"Open '(.*)' page with registration")]
+        [Then(@"Open ""(.*)"" page with registration")]
         public void ThenOpenNextPageWithRegistration(string titleText)
         {
             Assert.AreEqual(titleText, _page.ClickNewProfile());
-           // _page.ClickNewProfile();
         }
 
         [Then(@"The page with you profile opened")]

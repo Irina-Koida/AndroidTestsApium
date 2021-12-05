@@ -10,13 +10,12 @@ Background:
 @Registration
 Scenario: Check the possibility of registration in the application through the registration form
 	When Tap the Get started button
-	When Enter 'your' email
-	When Create 'a' password
+	When Enter 'Email' 
+	When Create 'Password' 
 	When Tap Next
-	Then Open next page with registration
+	Then Open "Great user" page with registration
 	When Enter your 'first name' name
 	When Enter your 'last name' last name
-	#When Select country
 	When Accept the Terms of Use and the Privacy Policy
 	When Tap "Done" in the upper right corner
 	Then The page with you profile opened

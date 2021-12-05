@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -10,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Appium.Enums;
+using OpenQA.Selenium.Appium.Service;
 
 namespace AndroidTestsApium.POM
 {
     public class Page
     {
-        private readonly AndroidElement _element;
-
         private readonly AppiumDriver<AndroidElement> _driver;
 
         public Page(AppiumDriver<AndroidElement> appiumDriver)
@@ -52,7 +50,7 @@ namespace AndroidTestsApium.POM
 
         public Page Gall()
         {
-           // gall = wait.Time(Until.ExplisitWait.ExpectedConditions.FindElement.ElementExist(By.Id("com.google.android.gms:id/cancel"));
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _driver.FindElement(gall).Click();
             return this;
         }
@@ -60,7 +58,6 @@ namespace AndroidTestsApium.POM
         public Page Email(string text)
         {
             _driver.FindElement(emailFiel).Click();
-            return this;
             _driver.FindElement(emailFiel).SendKeys(Helper.RandomEmailUser());
             return this;
         }
@@ -68,7 +65,6 @@ namespace AndroidTestsApium.POM
         public Page Password(string text)
         {
             _driver.FindElement(passwordFiel).Click();
-            return this;
             _driver.FindElement(passwordFiel).SendKeys(Helper.RandomEmailUser());
             return this;
         }
@@ -82,14 +78,12 @@ namespace AndroidTestsApium.POM
         public Page FirstName(string text)
         {
             _driver.FindElement(firstNameFiel).Click();
-            return this;
             _driver.FindElement(firstNameFiel).SendKeys("Dev");
             return this;
         }
         public Page LastName(string text)
         {
             _driver.FindElement(lastNameFiel).Click();
-            return this;
             _driver.FindElement(lastNameFiel).SendKeys("Deva");
             return this;
         }
