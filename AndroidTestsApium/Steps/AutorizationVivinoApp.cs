@@ -4,6 +4,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace AndroidTestsApium
@@ -31,7 +32,7 @@ namespace AndroidTestsApium
         [Then(@"Welcome Back page with text ""([^""]*)"" opens")]
         public void ThenWelcomeBackPageWithTextOpens(string textOfSignInWithEmail)
         {
-            Assert.AreEqual(actual: _autorizationPage.WelcomeBackPageText(textOfSignInWithEmail), expected: textOfSignInWithEmail);
+            Assert.AreEqual(actual: _autorizationPage.WelcomeBackPageText(textOfSignInWithEmail), expected: true);
         }
 
         [When(@"I tap Email field")]
@@ -43,6 +44,7 @@ namespace AndroidTestsApium
         [When(@"I put personal emai ""([^""]*)""")]
         public void WhenIPutPersonalEmai(string inputEmail)
         {
+            Thread.Sleep(300);
             _autorizationPage.EmailInput(inputEmail);
         }
 
@@ -55,6 +57,7 @@ namespace AndroidTestsApium
         [When(@"I put password ""([^""]*)""")]
         public void WhenIPutPassword(string inputPassword)
         {
+            Thread.Sleep(300);
             _autorizationPage.PasswordInput(inputPassword);
         }
 
@@ -67,7 +70,8 @@ namespace AndroidTestsApium
         [Then(@"For you page with title ""([^""]*)"" opens")]
         public void ThenForYouPageWithTitleOpens(string title)
         {
-            Assert.AreEqual(actual: _autorizationPage.ForYouPageTitle(title), expected: title);
+            Assert.AreEqual(actual: _autorizationPage.ForYouPageTitle(title), expected: true);
+
         }
     }
 }
