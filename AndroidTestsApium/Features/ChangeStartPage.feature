@@ -10,5 +10,6 @@ Scenario: Check the possibility to change the start page
 	When From the offered list of options, select Settings
 	When Find the App starts
 	When Select page, what  you want to see like start page
+	When Tap the button back
 	Then The start page changed
 

@@ -11,31 +11,38 @@ namespace AndroidTestsApium.Steps
     {
         private readonly AppiumDriver<AndroidElement> _driver;
         private readonly ScenarioContext _scenarioContext;
-        private DarkTheme _darkTheme;
+        private StartPageChange _startPage;
 
         public ChangeStartPageSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _driver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
-            _darkTheme = new DarkTheme(_driver);
+            _startPage = new StartPageChange(_driver);
         }
 
         [When(@"Find the App starts")]
         public void WhenFindTheAppStarts()
         {
-            ScenarioContext.Current.Pending();
+            _startPage.ClickAppStartsButton();
         }
         
         [When(@"Select page, what  you want to see like start page")]
         public void WhenSelectPageWhatYouWantToSeeLikeStartPage()
         {
-            ScenarioContext.Current.Pending();
+            _startPage.ChooseMyProfile();
         }
-        
-        [Then(@"The start page changed")]
-        public void ThenTheStartPageChanged()
+
+        [When(@"Tap the button back")]
+        public void WhenTapTheButtonBack()
         {
-            ScenarioContext.Current.Pending();
+            _startPage.ClickBackButton();
+        }
+
+
+        [Then(@"The start page changed")]
+        public void ThenTheStartPageChanged(string text)
+        {
+            Assert.AreEqual(actual: _myProfileText.ChooseMyProfileText(text), expected: text);
         }
     }
 }
