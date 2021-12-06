@@ -8,10 +8,10 @@
 Scenario: Check the possibility to change the start page 
 	When Tap in the upper right corner of the Kebab Menu
 	When From the offered list of options, select Settings
-	When Find the App starts
-	When Select page, what  you want to see like start page
-	When Tap the button back
-	Then The start page changed
+	When Find the App start
+	When Select page, what you want to see like start page
+	When Tap to the button back
+	Then The start page 'changed'
 
 	
 	@Settings @StartPage 

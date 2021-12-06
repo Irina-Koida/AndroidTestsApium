@@ -1,7 +1,7 @@
 ﻿Feature: DarkTeme
 	The user has registered
 	I want to switch on a dark theme
-	Then load on the eyes will be less
+	In order load on the eyes will be less
 
 @mytag
 Scenario: Check the possibility to switch on a dark theme in the application

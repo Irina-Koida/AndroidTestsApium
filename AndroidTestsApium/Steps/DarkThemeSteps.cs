@@ -20,7 +20,6 @@ namespace AndroidTestsApium.Steps
             _darkTheme = new DarkTheme(_driver);
         }
 
-
         [When(@"Tap in the upper right corner of the Kebab Menu")]
         public void WhenTapInTheUpperRightCornerOfThe()
         {

@@ -20,26 +20,25 @@ namespace AndroidTestsApium.Steps
             _settingPage = new SettingsPage(_driver);
         }
 
-        [When(@"Find the App starts")]
+        [When(@"Find the App start")]
         public void WhenFindTheAppStarts()
         {
             _settingPage.ClickAppStartsButton();
         }
-        
-        [When(@"Select page, what  you want to see like start page")]
+
+        [When(@"Select page, what you want to see like start page")]
         public void WhenSelectPageWhatYouWantToSeeLikeStartPage()
         {
             _settingPage.ChooseMyProfile();
         }
 
-        [When(@"Tap the button back")]
+        [When(@"Tap to the button back")]
         public void WhenTapTheButtonBack()
         {
             _settingPage.ClickBackButton();
         }
-
-
-        [Then(@"The start page changed")]
+        
+        [Then(@"The start page '(.*)'")]
         public void ThenTheStartPageChanged(string text)
         {
             Assert.AreEqual(actual: _settingPage.ChooseMyProfileText(text), expected: text);

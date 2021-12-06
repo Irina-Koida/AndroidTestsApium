@@ -1,12 +1,8 @@
 ﻿Feature: Registrarion
 I am as a user
 I want to register
-Then in order to use the application to the fullest
+In order in order to use the application to the fullest
 
-Background: 
-
-#Given Application with opened
-#
 @Registration
 Scenario: Check the possibility of registration in the application through the registration form
 	When Tap the Get started button
