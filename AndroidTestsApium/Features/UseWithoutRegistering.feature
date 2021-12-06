@@ -21,11 +21,10 @@ Scenario: It is possible to navigate to the selected wine
 	When I tap the "Next" button
 	When I tap to "Next" button
 	When I select a "Try us out" button
-	Then My profile page is open
 	When I tap Search section
 	When I tap "Red" type
 	Then I see a info text "Red"
-	Then I see text with the count of wines "522 wines"
+	Then I see text with the count of wines "521 wines"
 
 @without @registration
 Scenario: It is possible to navigate to the selected combination of something with wine
@@ -35,12 +34,11 @@ Scenario: It is possible to navigate to the selected combination of something wi
 	When I tap the "Next" button
 	When I tap to "Next" button
 	When I select a "Try us out" button
-	Then My profile page is open
 	When I tap Search section
 	When I tap "PAIRING" subsection
 	When I tap "Lamb" pair
 	Then I see a information text "Lamb"
-	Then I see a text with the count of wines "343 wines"
+	Then I see a text with the count of wines "344 wines"
 
 @without @registration
 Scenario: It is possible to navigate to the selected wine style
@@ -50,7 +48,6 @@ Scenario: It is possible to navigate to the selected wine style
     When I tap the "Next" button
 	When I tap to "Next" button
 	When I select a "Try us out" button
-	Then My profile page is open
 	When I tap Search section
 	When I tap subsection "STYLE"
 	When I tap "Californian Cabernet Sauvignon" style
@@ -65,6 +62,5 @@ Scenario: It is possible to navigate to the notifications page
 	When I tap the "Next" button
 	When I tap to "Next" button
 	When I select a "Try us out" button
-	Then My profile page is open
 	When Tap the Notifications icon, it looks like a bell in the upper right corner
 	Then I see text "You have no notifications"
