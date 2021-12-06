@@ -209,7 +209,8 @@ this.ScenarioInitialize(scenarioInfo);
                     "registration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("It is possible to navigate to the selected combination of something with wine", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 31
+
+
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -229,6 +230,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+
 #line 32
     testRunner.When("I tap a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -263,6 +265,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I see a information text \"Lamb\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 43
+
  testRunner.Then("I see a text with the count of wines \"343 wines\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -280,7 +283,8 @@ this.ScenarioInitialize(scenarioInfo);
                     "registration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("It is possible to navigate to the selected wine style", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 46
+
+
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -300,6 +304,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+
 #line 47
     testRunner.When("I tap a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -335,6 +340,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 58
  testRunner.Then("I see text with the count of selected wines by style \"1 wine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+
 #line hidden
             }
             this.ScenarioCleanup();
@@ -351,7 +357,9 @@ this.ScenarioInitialize(scenarioInfo);
                     "registration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("It is possible to navigate to the notifications page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+
 #line 61
+
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -371,6 +379,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+
 #line 62
     testRunner.When("I tap a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -396,6 +405,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Tap the Notifications icon, it looks like a bell in the upper right corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 70
+
  testRunner.Then("I see text \"You have no notifications\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
