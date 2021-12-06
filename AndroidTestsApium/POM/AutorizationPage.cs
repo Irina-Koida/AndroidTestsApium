@@ -20,10 +20,10 @@ namespace AndroidTestsApium.POM
 
         private readonly By _haveAnAccountButton = By.CssSelector("[id='vivino.web.app:id/txthaveaccount']");
         private readonly By _signInText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
-        private readonly By _emailField = By.CssSelector("[id='vivino.web.app:id/til_email']");
-        private readonly By _passwordField = By.CssSelector("[id='vivino.web.app:id/til_password']");
+        private readonly By _emailField = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.EditText");
+        private readonly By _passwordField = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.EditText");
         private readonly By _logInButton = By.CssSelector("[id='vivino.web.app:id/action_signin']");
-        private readonly By _titleText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup/android.widget.TextView");
+        private readonly By _titleText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView");
 
         public AutorizationPage HaveAnAccountButtonTap()
         {
@@ -79,14 +79,8 @@ namespace AndroidTestsApium.POM
             return this;
         }
 
-        public bool ForYouPageTitle(string title)
-        {
-            if (_driver.FindElement(_titleText).Text.Contains(title))
-            {
-                return true;
-            }
-            return false;
-        }
+        public string ForYouPageTitle(string title) =>
+         _driver.FindElement(_titleText).Text;
 
     }
 }

@@ -31,7 +31,7 @@ namespace AndroidTestsApium
         [Then(@"Welcome Back page with text ""([^""]*)"" opens")]
         public void ThenWelcomeBackPageWithTextOpens(string textOfSignInWithEmail)
         {
-            Assert.AreEqual(actual: _autorizationPage.WelcomeBackPageText(textOfSignInWithEmail), expected: textOfSignInWithEmail);
+            Assert.AreEqual(actual: _autorizationPage.WelcomeBackPageText(textOfSignInWithEmail), expected: true);
         }
 
         [When(@"I tap Email field")]

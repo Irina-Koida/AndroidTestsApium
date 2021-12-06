@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.When("I tap on Log in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-  testRunner.Then("For you page with title \"Picked for you\" opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("For you page with title \"For you\" opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

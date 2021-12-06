@@ -13,7 +13,7 @@ Scenario: Check personal account opens when I do autorization
   When I tap on Password field
   When I put password "14"
   When I tap on Log in button 
-  Then For you page with title "Picked for you" opens 
+  Then For you page with title "For you" opens 
 
   @useAutorization @typeOfWines
 Scenario: Check product card opens in list of Browse Wines Types

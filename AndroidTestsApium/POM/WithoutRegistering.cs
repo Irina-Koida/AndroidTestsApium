@@ -14,10 +14,7 @@ namespace AndroidTestsApium.POM
             _driver = appiumDriver;
         }
 
-        private readonly By _buttonNext = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget" +
-            ".LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
-            "FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget." +
-            "LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]");
+        private readonly By _buttonNext = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]");
         private readonly By _buttonTryUsOut = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
             "android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/" +
             "android.widget.Button[2]");
