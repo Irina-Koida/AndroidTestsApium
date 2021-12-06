@@ -17,9 +17,13 @@ namespace AndroidTestsApium.Drivers
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android SDK");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "10.0");
+
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Pixel4");
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "C:\\Users\\Irina Koida\\Downloads\\vivino.web.app_8.20.10_8201099.apk");
             driverOptions.AddAdditionalCapability(MobileCapabilityType.AutomationName, "Appium");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "C:\\Users\\Kostiantin\\Desktop\\TestsAPK\\vivino.web.app_8.20.10_8201099.apk");
-            driverOptions.AddAdditionalCapability("appWaitActivity", "com.vivino.activities.OOTB");
+            driverOptions.AddAdditionalCapability("appPackage", "vivino.web.app");
+            driverOptions.AddAdditionalCapability("appActivity", "com.vivino.activities.SplashActivity");
+
 
             var appiumService = new AppiumServiceBuilder().WithIPAddress("127.0.0.1")
                 .UsingAnyFreePort().Build(); //запускаем сервер
@@ -29,9 +33,9 @@ namespace AndroidTestsApium.Drivers
                 appiumService.Start();
             }
 
-            _driver = new AndroidDriver<AndroidElement>(appiumService, driverOptions, TimeSpan.FromSeconds(100));
+            _driver = new AndroidDriver<AndroidElement>(appiumService, driverOptions, TimeSpan.FromSeconds(250));
            // _driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), driverOptions, TimeSpan.FromSeconds(100));
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(50);
             return _driver;
 
         }

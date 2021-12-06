@@ -30,13 +30,25 @@ namespace AndroidTestsApium.Steps
         {
             _userWithoutRegistering.TapNext(next);
         }
-        
+
+        [When(@"I tap the ""(.*)"" button")]
+        public void WhenITapTheButton(string nextNext)
+        {
+            _userWithoutRegistering.TapNextNext(nextNext);
+        }
+
+        [When(@"I tap to ""(.*)"" button")]
+        public void WhenITapToButton(string nextNextNext)
+        {
+            _userWithoutRegistering.TapNextNextNext(nextNextNext);
+        }
+
         [When(@"I select a ""(.*)"" button")]
         public void WhenISelectAButton(string continueWithoutAccount)
         {
             _userWithoutRegistering.TapContiueWithoutAccount(continueWithoutAccount);
         }
-        
+
         [Then(@"My profile page is open")]
         public void ThenMyProfilePageIsOpen()
         {

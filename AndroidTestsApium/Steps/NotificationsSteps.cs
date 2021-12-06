@@ -19,12 +19,12 @@ namespace AndroidTestsApium.Steps
             _notifications = new Notifications(_androidDriver);
         }
 
-        [When(@"Tap the ""(.*)"" icon, it looks like a bell in the upper right corner")]
-        public void WhenTapTheIconItLooksLikeABellInTheUpperRightCorner(string notifications)
+        [When(@"Tap the Notifications icon, it looks like a bell in the upper right corner")]
+        public void WhenTapTheNotificationsIconItLooksLikeABellInTheUpperRightCorner()
         {
-            _notifications.TapABell(notifications);
+            _notifications.TapABell();
         }
-        
+
         [Then(@"I see text ""(.*)""")]
         public void ThenISeeText(string info)
         {
