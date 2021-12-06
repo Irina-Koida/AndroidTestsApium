@@ -37,6 +37,12 @@ namespace AndroidTestsApium.Steps
             _userWithoutRegistering.TapNextNext(nextNext);
         }
 
+        [When(@"I tap to ""(.*)"" button")]
+        public void WhenITapToButton(string nextNextNext)
+        {
+            _userWithoutRegistering.TapNextNextNext(nextNextNext);
+        }
+
         [When(@"I select a ""(.*)"" button")]
         public void WhenISelectAButton(string continueWithoutAccount)
         {

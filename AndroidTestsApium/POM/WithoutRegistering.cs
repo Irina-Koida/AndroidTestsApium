@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium.MultiTouch;
 using OpenQA.Selenium.Interactions;
 
 namespace AndroidTestsApium.POM
@@ -8,10 +9,12 @@ namespace AndroidTestsApium.POM
     class WithoutRegistering
     {
         private readonly AppiumDriver<AndroidElement> _driver;
+        private readonly Actions _action;
 
         public WithoutRegistering(AppiumDriver<AndroidElement> appiumDriver)
         {
             _driver = appiumDriver;
+            _action = new Actions(_driver);
         }
 
         private readonly By _buttonNext = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget" +
@@ -32,8 +35,13 @@ namespace AndroidTestsApium.POM
         public void TapNext(string next) =>
         _driver.FindElement(_buttonNext).Click();
 
-        public void TapNextNext(string nextNext) =>
-        _driver.FindElement(_buttonNextNext).Click();
+        public void TapNextNext(string nextNext)
+        {
+            _action.MoveToElement(_driver.FindElement(_buttonNextNext)).Click().Perform();
+        }
+
+         public void TapNextNextNext(string nextNextNext) =>
+        _action.MoveToElement(_driver.FindElement(_buttonNextNext)).Click().Perform();
 
         public void TapContiueWithoutAccount(string contiueWithoutAccount) =>
        _driver.FindElement(_buttonTryUsOut).Click();

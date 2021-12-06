@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I tap to \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
  testRunner.When("I select a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -174,7 +174,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
- testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I tap to \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
  testRunner.When("I select a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -242,7 +242,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 36
- testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I tap to \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 37
  testRunner.When("I select a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -313,7 +313,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 51
- testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I tap to \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 52
  testRunner.When("I select a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -384,7 +384,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 66
- testRunner.When("I tap the \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I tap to \"Next\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 67
  testRunner.When("I select a \"Try us out\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

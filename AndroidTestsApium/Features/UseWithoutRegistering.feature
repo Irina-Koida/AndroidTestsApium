@@ -9,7 +9,7 @@ Scenario: Go to the start page without registration
 	When I tap "Next" button
 	When I tap "Next" button
 	When I tap the "Next" button
-	When I tap the "Next" button
+	When I tap to "Next" button
 	When I select a "Try us out" button
 	Then My profile page is open
 
@@ -19,7 +19,7 @@ Scenario: It is possible to navigate to the selected wine
 	When I tap "Next" button
 	When I tap "Next" button
 	When I tap the "Next" button
-	When I tap the "Next" button
+	When I tap to "Next" button
 	When I select a "Try us out" button
 	Then My profile page is open
 	When I tap Search section
@@ -33,7 +33,7 @@ Scenario: It is possible to navigate to the selected combination of something wi
 	When I tap "Next" button
 	When I tap "Next" button
 	When I tap the "Next" button
-	When I tap the "Next" button
+	When I tap to "Next" button
 	When I select a "Try us out" button
 	Then My profile page is open
 	When I tap Search section
@@ -48,7 +48,7 @@ Scenario: It is possible to navigate to the selected wine style
 	When I tap "Next" button
 	When I tap "Next" button
     When I tap the "Next" button
-	When I tap the "Next" button
+	When I tap to "Next" button
 	When I select a "Try us out" button
 	Then My profile page is open
 	When I tap Search section
@@ -63,7 +63,7 @@ Scenario: It is possible to navigate to the notifications page
 	When I tap "Next" button
 	When I tap "Next" button
 	When I tap the "Next" button
-	When I tap the "Next" button
+	When I tap to "Next" button
 	When I select a "Try us out" button
 	Then My profile page is open
 	When Tap the Notifications icon, it looks like a bell in the upper right corner
