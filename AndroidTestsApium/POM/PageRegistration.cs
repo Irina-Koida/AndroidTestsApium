@@ -45,7 +45,6 @@ namespace AndroidTestsApium.POM
             "LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
             "FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView");
 
-
         public PageRegistration ClickGetStartButton()
         {
             _driver.FindElement(getStartedButton).Click();
