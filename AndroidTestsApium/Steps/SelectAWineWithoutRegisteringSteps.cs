@@ -20,12 +20,12 @@ namespace AndroidTestsApium.Steps
             _selectAWineWithoutRegistering = new SelectAWineWithoutRegistering(_androidDriver);
         }
 
-        [When(@"I tap ""(.*)"" section")]
-        public void WhenITapSection(string search)
+        [When(@"I tap Search section")]
+        public void WhenITapSearchSection()
         {
-            _selectAWineWithoutRegistering.SearchPage(search);
+            _selectAWineWithoutRegistering.SearchPage();
         }
-        
+
         [When(@"I tap ""(.*)"" type")]
         public void WhenITapType(string red)
         {

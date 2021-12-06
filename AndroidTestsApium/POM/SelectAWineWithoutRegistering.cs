@@ -8,12 +8,10 @@ namespace AndroidTestsApium.POM
     class SelectAWineWithoutRegistering
     {
         private readonly AppiumDriver<AndroidElement> _driver;
-        private readonly WithoutRegistering _withoutRegistering;
 
         public SelectAWineWithoutRegistering(AppiumDriver<AndroidElement> appiumDriver)
         {
             _driver = appiumDriver;
-            _withoutRegistering = new WithoutRegistering(_driver);
         }
 
         private readonly By _search = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +
@@ -34,12 +32,8 @@ namespace AndroidTestsApium.POM
             "android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/" +
             "android.widget.LinearLayout[2]/android.widget.TextView");
 
-        public void SearchPage(string search)
+        public void SearchPage()
         {
-            _withoutRegistering.TapATryUsOut(search);
-            _withoutRegistering.TapNext(search);
-            _withoutRegistering.TapContiueWithoutAccount(search);
-            _withoutRegistering.OpenProfilePage();
             _driver.FindElement(_search).Click();
         }
 
