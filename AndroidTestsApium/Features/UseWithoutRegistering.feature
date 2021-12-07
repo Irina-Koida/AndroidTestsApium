@@ -10,7 +10,7 @@ Scenario: Go to the start page without registration
 	When I tap "Next" button
 	When I tap the "Next" button
 	When I tap to "Next" button
-	When I select a "Try us out" button
+	When I select a "Continue without account" button
 	Then My profile page is open
 
 @without @registration
