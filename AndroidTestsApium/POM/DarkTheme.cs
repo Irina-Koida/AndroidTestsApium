@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AndroidTestsApium.Helpers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using System;
@@ -43,8 +44,10 @@ namespace AndroidTestsApium.POM
 
         public DarkTheme ClickButtonDarkMode()
         {
-           // MoveTo()HelperSwipe.
-            _driver.FindElement(darkMode).Click();sdsv ghghghd
+            HelperSwipe.Scroll(727, 333, 727, 1243, _driver);
+            HelperSwipe.Scroll(727, 435, 727, 606, _driver);
+            HelperSwipe.Waiter(_driver);
+            _driver.FindElement(darkMode).Click();
             return this;
         }
 
