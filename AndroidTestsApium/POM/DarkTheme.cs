@@ -44,7 +44,7 @@ namespace AndroidTestsApium.POM
         public DarkTheme ClickButtonDarkMode()
         {
            // MoveTo()HelperSwipe.
-            _driver.FindElement(darkMode).Click();
+            _driver.FindElement(darkMode).Click();sdsv ghghghd
             return this;
         }
 
