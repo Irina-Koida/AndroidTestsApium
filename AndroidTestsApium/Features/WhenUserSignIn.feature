@@ -54,3 +54,14 @@ Scenario: It is possible to navigate to the notifications page
 	When I tap on Log in button
 	When Tap the Notifications icon, it looks like a bell in the upper right corner
 	Then I see text "You have no notifications"
+
+Scenario: It is possible to navigate to the Friends page
+    When I tap I have an account button
+	Then Welcome Back page with text "SIGN IN WITH EMAIL" opens
+	When I tap Email field
+	When I put personal emai "kataleua634@gmail.com"
+	When I tap on Password field
+	When I put password "naruto"
+	When I tap on Log in button
+	When Tap the Friends icon, it looks like a people avatar
+	Then I see  a text "Got something to share?"
